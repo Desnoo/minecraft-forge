@@ -20,6 +20,8 @@ RUN curl --create-dirs -sLo /minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSIO
   rm -f /minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar /minecraft/forge-${MINECRAFT_VERSION}-${FORGE_VERSION}-installer.jar.log
 
 ADD rootfs /
+ENV BUILD_CRAFT_JAR buildcraft-7.99.8.2.jar
+RUN curl --create-dirs -sLo /minecraft/mods/${BUILD_CRAFT_JAR} https://mod-buildcraft.com/releases/BuildCraft/7.99.8.2/${BUILD_CRAFT_JAR}
 
 ARG VERSION
 ARG BUILD_DATE
